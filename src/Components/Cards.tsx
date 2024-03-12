@@ -3,11 +3,15 @@ import { Repository } from '../hooks/types'
 
 type CardProps={
     repository: Repository
+    isFavorite: boolean
 }
 
-function Cards({repository}:CardProps) {
+function Cards({repository, isFavorite}:CardProps) {
   return (
-    <div><h1>{repository.name}</h1></div>
+    <div>
+        <h1>{repository.name}</h1>
+        <button>{isFavorite ? "dislike": "like"}</button>
+    </div>
   )
 }
 
