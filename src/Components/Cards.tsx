@@ -1,5 +1,6 @@
 import React from 'react'
 import { Repository } from '../hooks/types'
+import { useFavoriteReposStore } from '../store/favoriteRepos'
 
 type CardProps={
     repository: Repository
@@ -7,6 +8,9 @@ type CardProps={
 }
 
 function Cards({repository, isFavorite}:CardProps) {
+
+  const addFavoriteRepo=useFavoriteReposStore(state=> state.addFavoriteRepo);
+
   return (
     <div>
         <h1>{repository.name}</h1>
