@@ -10,11 +10,19 @@ type CardProps={
 function Cards({repository, isFavorite}:CardProps) {
 
   const addFavoriteRepo=useFavoriteReposStore(state=> state.addFavoriteRepo);
+  const removeFavoriteRepo= useFavoriteReposStore(state=> state.removeFavoriteRepo);
 
+  const toggleFavorite=()=>{
+    if(isFavorite){
+        removeFavoriteRepo(repository.id);
+        return
+    }
+    addFavoriteRepo(repository.id)
+  }
   return (
     <div>
         <h1>{repository.name}</h1>
-        <button>{isFavorite ? "dislike": "like"}</button>
+        <button onClick={toggleFavorite}>{isFavorite ? "dislike": "like"}</button>
     </div>
   )
 }
