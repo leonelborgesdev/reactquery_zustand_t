@@ -4,8 +4,8 @@ import Cards from '../Components/Cards';
 import { useFavoriteReposStore } from '../store/favoriteRepos';
 
 export const ReposComponent = () => {
-    const {data, isLoading}=useFetchRepositories();
-    const {favoriteReposIds }=useFavoriteReposStore();
+    const { data, isLoading }=useFetchRepositories();
+    const { favoriteReposIds }=useFavoriteReposStore();
   
     if (isLoading) {
       return <div>Loading...</div>

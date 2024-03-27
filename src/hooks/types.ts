@@ -1,4 +1,4 @@
-export interface Root {
+export interface rootVideogames {
   ok: boolean
   videogames: Videogame[]
 }
