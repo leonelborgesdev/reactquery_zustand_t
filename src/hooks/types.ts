@@ -2,7 +2,10 @@ export interface rootVideogames {
   ok: boolean
   videogames: Videogame[]
 }
-
+export interface rootGenre{
+  ok: boolean
+  genres: Genre[]
+}
 export interface Videogame {
   id: string
   nombre: string
