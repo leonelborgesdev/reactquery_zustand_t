@@ -1,3 +1,29 @@
+export interface Root {
+  ok: boolean
+  videogames: Videogame[]
+}
+
+export interface Videogame {
+  id: string
+  nombre: string
+  image: string
+  descripcion: string
+  fecha_lanzamiento: string
+  rating: number
+  plataformas: string
+  createAt: string
+  updateAt: string
+  genres: Genre[]
+}
+
+export interface Genre {
+  id: string
+  nombre: string
+  createAt: string
+  updateAt: string
+}
+
+
 export interface Repository {
     id: number
     node_id: string
