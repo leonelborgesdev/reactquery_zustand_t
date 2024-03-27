@@ -7,9 +7,9 @@ async function fetchRoot() {
     return data
 }
 
-export function useFetchRoot() {
+export function useFetchRootVideogames() {
     return useQuery({
-        queryKey: ['root'], // Esta es la clave de la consulta, puede ser cualquier valor único
+        queryKey: ['getvideogames'], // Esta es la clave de la consulta, puede ser cualquier valor único
         queryFn: fetchRoot // Aquí debes proporcionar la función que realiza la consulta y devuelve los datos
     });
 }

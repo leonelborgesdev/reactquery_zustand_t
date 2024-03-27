@@ -1,10 +1,11 @@
-import { ReposComponent } from "./Components/ReposComponent"
+
+import { VideogamesComponent } from "./Components/VideogamesComponent"
 
 
 function App() {
   
   return (
-    <div><ReposComponent/></div>
+    <div><VideogamesComponent/></div>
   )
 }
 
