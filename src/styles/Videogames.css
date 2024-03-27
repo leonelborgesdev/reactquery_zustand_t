@@ -1,0 +1,6 @@
+.container_videogames{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 20px;
+}
