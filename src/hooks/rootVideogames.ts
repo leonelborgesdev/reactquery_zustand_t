@@ -4,7 +4,8 @@ import { rootVideogames } from "./types";
 
 async function fetchRoot() {
     const { data } = await api.get<rootVideogames>('/videogames')
-    return data
+    const listvideogames= data.videogames
+    return listvideogames
 }
 
 export function useFetchRootVideogames() {
