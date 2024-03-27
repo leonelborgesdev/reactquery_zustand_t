@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 
 type favoriteReposState={
     favoriteReposIds: number[]
@@ -6,6 +6,17 @@ type favoriteReposState={
     removeFavoriteRepo: (id: number)=>void,
 }
 
+export const useFavoriteReposStore= create<favoriteReposState>((set)=>({
+    favoriteReposIds: [],
+    addFavoriteRepo: (id: number)=>{
+        set((state)=>({
+            favoriteReposIds: [...state.favoriteReposIds, id]
+        }))
+    },
+    removeFavoriteRepo: (id: number)=>set(state=> ({
+        favoriteReposIds: state.favoriteReposIds.filter(repoId=> repoId!==id)
+    }))
+}))
 // export const useFavoriteReposStore= create(persist<favoriteReposState>((set)=>({
 //     favoriteReposIds: [],
 //     addFavoriteRepo: (id: number)=>{
@@ -20,15 +31,3 @@ type favoriteReposState={
 //         name:"favorite-repos"
 //     }   
 // ))
-
-export const useFavoriteReposStore= create<favoriteReposState>((set)=>({
-    favoriteReposIds: [],
-    addFavoriteRepo: (id: number)=>{
-        set((state)=>({
-            favoriteReposIds: [...state.favoriteReposIds, id]
-        }))
-    },
-    removeFavoriteRepo: (id: number)=>set(state=> ({
-        favoriteReposIds: state.favoriteReposIds.filter(repoId=> repoId!==id)
-    }))
-}))
